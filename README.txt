@@ -1,4 +1,5 @@
 Из документации Peppol UBL Invoice так: <cbc:LineExtensionAmount> — чистая сумма строк, <cac:TaxTotal> — общая сумма налогов, <cac:TaxSubtotal> — разбивка налогов.
+
 Моя логика
 Парсинг: суммы (например, "1500.00") в int64 через big.Float (150000 центов), проценты (например, "20") в int через strconv.Atoi.
 Валидация: для каждого <cac:TaxSubtotal> проверяется TaxableAmount * Percent / 100 = TaxAmount (например, 100000 * 20 / 100 = 20000).
